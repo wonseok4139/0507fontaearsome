@@ -1,0 +1,139 @@
+/* 전체 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+/* 네비게이션 */
+.navbar {
+  background-color: #006241;
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+}
+.nav-left {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 30px;
+}
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* 메뉴 사이 간격 */
+  flex-grow: 1; /* 왼쪽으로 쭉 밀기 */
+}
+.nav-menu li a {
+  display: block;
+  width: 80px; /* 동일 너비 */
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding: 8px 0;
+}
+.nav-right a {
+  color: white;
+  text-decoration: none;
+}
+
+/* 슬라이더 */
+.slider {
+  position: relative;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+.slides .slide {
+  display: none;
+}
+.slides .slide img {
+  width: 100%;
+  display: block;
+}
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  padding: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot.active {
+  background-color: #006241;
+}
+
+/* 회원가입 섹션 */
+.signup {
+  text-align: center;
+  padding: 40px 20px;
+}
+.signup h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.form-group {
+  margin: 10px auto;
+  width: 300px;
+  text-align: left;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+}
+button[type='submit'] {
+  margin-top: 20px;
+  background-color: #006241;
+  color: white;
+  padding: 10px 0;
+  width: 300px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.login-link {
+  display: block;
+  margin-top: 15px;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+/* 푸터 */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  font-size: 14px;
+  color: #555;
+}
