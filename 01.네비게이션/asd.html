@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="ko">
+      <head>
+        <meta charset="UTF-8" />
+        <title>뉴스 목록</title>
+        <style>
+          li {
+            list-style: none;
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+          }
+        </style>
+      </head>
+      <body>
+        <div id="root">불러오는 중...</div>
+
+        <script>
+          // 1. XHR 객체 만들기
+          const xhr = new XMLHttpRequest();
+          const NEWS_URL = 'https://api.hnpwa.com/v0/news/1.json';
+
+          // 2. 요청 초기화 (GET 방식)
+          xhr.open('GET', NEWS_URL, false); // false = 동기 방식
+
+          // 3. 요청 보내기
+          xhr.send();
+
+          // 4. 응답 받은 JSON 문자열을 JS 객체로 변환
+          const newsData = JSON.parse(xhr.responseText);
+
+          // 5. UL 태그 만들기
+          const ul = document.createElement('ul');
+
+          // 6. 반복문으로 li 만들어서 넣기
+          for (let i = 0; i < 10; i++) {
+            const li = document.createElement('li');
+            li.textContent = newsData[i].title;
+            ul.appendChild(li);
+          }
+
+          // 7. root에 ul 붙이기 (기존 텍스트 제거)
+          const root = document.querySelector('#root');
+          root.innerHTML = ''; // 기존 '불러오는 중...' 제거
+          root.appendChild(ul);
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
